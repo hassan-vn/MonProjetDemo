@@ -6,7 +6,7 @@ const connection = require('../db_connect').connection;
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   debug("List students");
-  connection.query(
+  connection.execute(
     'SELECT * FROM `students`',
     (err, results, fields) => {
       if (err) {
@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 router.post('/', (req, res) => {
   debug("Create new student");
   const newStudent = req.body;
-  connection.query(
+  connection.execute(
     'INSERT INTO `students` (firstName, lastName) VALUES (?, ?)',
     [ newStudent.firstName, newStudent.lastName ],
     (err, results, fields) => {
@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res) => {
   debug("Get student details");
   const studentId = req.params.id;
-  connection.query(
+  connection.execute(
     'SELECT * FROM `students` WHERE id = ?',
     [ studentId ],
     (err, results, fields) => {
@@ -59,7 +59,7 @@ router.get('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   debug("Delete student");
   const studentId = req.params.id;
-  connection.query(
+  connection.execute(
     'DELETE FROM `students` WHERE id = ?',
     [ studentId ],
     (err, results, fields) => {
