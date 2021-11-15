@@ -3,8 +3,6 @@ const router = express.Router();
 const debug = require('debug')('monprojetdemo:api:student');
 const connection = require('../db_connect').connection;
 
-const studentList = [];
-
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   debug("List students");
