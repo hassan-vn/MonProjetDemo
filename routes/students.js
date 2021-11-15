@@ -1,16 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const debug = require('debug')('monprojetdemo:api:student');
-const mysql = require('mysql2');
-
-// create the connection to database
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'studentdb'
-});
-
-const studentList = [];
+const connection = require('../db_connect');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
