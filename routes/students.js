@@ -28,6 +28,8 @@ router.post('/', (req, res) => {
       if (err) {
         debug(err);
       } else {
+        const generatedId = results.insertId;
+        res.set("Location", `${req.baseUrl}/${generatedId}`);
         res.status(201).send("Student created");
       }
     }
@@ -64,7 +66,11 @@ router.delete('/:id', (req, res) => {
       if (err) {
         debug(err);
       } else {
-        res.status(204).send();
+        if (results.affectedRows > 0) {
+          res.status(204).send("Student deleted");
+        } else {
+          res.status(404).send("Student not found");
+        }
       }
     }
   );
