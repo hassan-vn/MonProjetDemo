@@ -2,13 +2,11 @@ image: gitpod/workspace-mysql
 
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - name: dependencies and database
-    init: |
+  - init: |
       npm install
       gp await-port 3306
       npm run create_database
       npm run create_tables
-  - name: dev server
     command: |
       gp await-port 3306
       npm run dev
