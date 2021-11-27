@@ -25,6 +25,7 @@
 	"extensions": [
 		"dbaeumer.vscode-eslint",
 		"esbenp.prettier-vscode",
+		"humao.rest-client",
 		"mtxr.sqltools",
 		"mtxr.sqltools-driver-pg"
 	],
