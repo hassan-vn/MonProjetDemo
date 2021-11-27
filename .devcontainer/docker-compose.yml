@@ -10,12 +10,13 @@ services:
         # Append -bullseye or -buster to pin to an OS version.
         # Use -bullseye variants on local arm64/Apple Silicon.
         VARIANT: 16-bullseye
-      environment:
-        - DB_HOSTNAME=db
-        - DB_DBNAME=postgres
-        - DB_USERNAME=postgres
-        - DB_PASSWORD=postgres
-        - DB_DIALECT=postgres
+
+    environment:
+      DB_HOSTNAME: db
+      DB_DBNAME: postgres
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      DB_DIALECT: postgres
 
     volumes:
       - ..:/workspace:cached
