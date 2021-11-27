@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const debug = require('debug')('monprojetdemo:api:student');
-const connection = require('../db_connect').connection;
 const { Student } = require('../models/students');
 
 /* GET users listing. */
