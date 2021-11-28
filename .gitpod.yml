@@ -6,7 +6,7 @@ tasks:
       npm install
       gp await-port 3306
       npm run create_database
-      npm run create_tables
+      npm run import_samples
     command: |
       gp await-port 3306
       npm run dev
