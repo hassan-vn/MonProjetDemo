@@ -1,6 +1,6 @@
 const debug = require("debug")("monprojetdemo:schema");
 const sequelize = require("./connection");
-const { Student } = require("./student");
+const Student = require("./student");
 
 (async () => {
   debug("Recreating tables...");
@@ -21,7 +21,7 @@ const { Student } = require("./student");
     lastName: "Abou-Zeid",
   });
   const jonathan = await Student.create({
-    firstName: "Jonthan",
+    firstName: "Jonathan",
     lastName: "Degrave",
   });
   const hatim = await Student.create({
