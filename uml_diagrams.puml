@@ -9,8 +9,10 @@ class Class {
     -id
     -academicYear
     -shortName
-    +subscribe(student)
+    +addStudent(student)
     +addTeachingPeriod(teachingPeriod)
+    +setEducationUnit(educationUnit)
+    +setTeacher(teacher)
 }
 
 class TeachingPeriod {
