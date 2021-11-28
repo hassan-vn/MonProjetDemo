@@ -17,3 +17,13 @@ ports:
     onOpen: ignore
   - port: 3306
     onOpen: ignore
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - editorconfig.editorconfig
+    - esbenp.prettier-vscode
+    - humao.rest-client
+    - jebbs.plantuml
+    - mtxr.sqltools
+    - mtxr.sqltools-driver-mysq
