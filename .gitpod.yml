@@ -25,5 +25,3 @@ vscode:
     - esbenp.prettier-vscode
     - humao.rest-client
     - jebbs.plantuml
-    - mtxr.sqltools
-    - mtxr.sqltools-driver-mysq
