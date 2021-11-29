@@ -1,6 +1,12 @@
 const debug = require("debug")("monprojetdemo:schema");
 const sequelize = require("./connection");
-const { Class, EducationUnit, Student, Teacher, TeachingPeriod } = require("./schema");
+const {
+  Class,
+  EducationUnit,
+  Student,
+  Teacher,
+  TeachingPeriod,
+} = require("./schema");
 
 (async () => {
   debug("Recreating tables...");
@@ -35,49 +41,49 @@ const { Class, EducationUnit, Student, Teacher, TeachingPeriod } = require("./sc
 
   const mrsSonneville = await Teacher.create({
     firstName: "Véronique",
-    lastName: "Sonneville"
+    lastName: "Sonneville",
   });
   const mrsDesmarets = await Teacher.create({
     firstName: "Karin",
-    lastName: "Desmarets"
+    lastName: "Desmarets",
   });
   const mrRoland = await Teacher.create({
     firstName: "François",
-    lastName: "Roland"
+    lastName: "Roland",
   });
 
   const psgbd = await EducationUnit.create({
-    name: "Projet SGBD"
+    name: "Projet SGBD",
   });
   const projint = await EducationUnit.create({
-    name: "Projet d'intégration de développement"
+    name: "Projet d'intégration de développement",
   });
   const projweb = await EducationUnit.create({
-    name: "Projet de développement Web"
+    name: "Projet de développement Web",
   });
 
   const psgbd_s1_2122 = await Class.create({
     shortName: "PSGBD_S1_2122",
-    academicYear: "2021-2022"
+    academicYear: "2021-2022",
   });
   const projweb2_s1_222 = await Class.create({
     shortName: "PROJWEB2_S1_2122",
-    academicYear: "2021-2022"
+    academicYear: "2021-2022",
   });
   const projint_s1_222 = await Class.create({
     shortName: "PROJINT_S1_2122",
-    academicYear: "2021-2022"
+    academicYear: "2021-2022",
   });
 
   const p20211129_am = await TeachingPeriod.create({
     date: "2021-11-29",
     beginning: "09:00",
-    end: "12:30"
+    end: "12:30",
   });
   const p20211129_pm = await TeachingPeriod.create({
     date: "2021-11-29",
     beginning: "13:20",
-    end: "16:50"
+    end: "16:50",
   });
 
   await psgbd_s1_2122.setTeacher(mrsSonneville);
