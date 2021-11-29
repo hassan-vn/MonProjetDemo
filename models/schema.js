@@ -17,5 +17,9 @@ Class.belongsToMany(Student, { through: "students_classes" });
 Student.belongsToMany(Class, { through: "students_classes" });
 
 module.exports = {
-  Class, EducationUnit, Student, Teacher, TeachingPeriod
+  Class,
+  EducationUnit,
+  Student,
+  Teacher,
+  TeachingPeriod,
 };

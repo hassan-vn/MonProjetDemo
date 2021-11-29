@@ -1,29 +1,32 @@
 const debug = require("debug")("monprojetdemo:schema");
-const connection = require('./connection');
-const { DataTypes, Model } = require('sequelize');
+const connection = require("./connection");
+const { DataTypes, Model } = require("sequelize");
 
 debug("Defining TeachingPeriod model...");
 
 class TeachingPeriod extends Model {}
 
-TeachingPeriod.init({
+TeachingPeriod.init(
+  {
     date: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: false,
     },
     beginning: {
       type: DataTypes.TIME,
-      allowNull: false
+      allowNull: false,
     },
     end: {
       type: DataTypes.TIME,
-      allowNull: false
-    }
-}, {
-  sequelize: connection,
-  modelName: "teachingPeriod",
-  tableName: "teaching_periods"
-});
+      allowNull: false,
+    },
+  },
+  {
+    sequelize: connection,
+    modelName: "teachingPeriod",
+    tableName: "teaching_periods",
+  }
+);
 
 debug("TeachingPeriod model defined.");
 
