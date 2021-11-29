@@ -1,5 +1,5 @@
 // Load all defined models
-require("./student");
+require("./schema");
 
 const sequelize = require("./connection");
 const debug = require("debug")("monprojetdemo:schema");
